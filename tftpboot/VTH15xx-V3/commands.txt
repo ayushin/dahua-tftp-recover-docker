@@ -1,0 +1,9 @@
+tftp 0x82000000 romfs-x.cramfs.img; flwrite
+tftp 0x82000000 kernel-x.cramfs.img; flwrite
+tftp 0x82000000 user-x.cramfs.img; flwrite
+tftp 0x82000000 gui-x.cramfs.img; flwrite
+tftp 0x82000000 data-x.cramfs.img; flwrite
+tftp 0x82000000 custom-x.cramfs.img; flwrite
+tftp 0x82000000 pd-x.cramfs.img; flwrite
+tftp 0x82000000 .FLASHING_DONE_STOP_TFTP_NOW
+sleep 360
