@@ -1,0 +1,16 @@
+services:
+  tftp-server:
+    build:
+      context: tftp-server
+    volumes:
+      - ./tftpboot/VTH15xx-V3:/tftpboot
+    command: ["--port-range", "49152:49160", "-B1468", "/tftpboot"]
+    ports:
+      - 192.168.254.254:69:69/udp
+      - 192.168.254.254:49152-49160:49152-49160/udp
+  console-monitor:
+    build:
+      context: console-monitor
+    command: ["-lu", "-p", "5002"]
+    ports:
+      - 192.168.254.254:5002:5002/udp
